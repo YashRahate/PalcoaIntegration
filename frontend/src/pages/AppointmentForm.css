@@ -1,0 +1,98 @@
+
+.appointment-form-heading {
+  text-align: center;
+  margin:10px;
+  font-size: 24px;
+  font-weight: bold;
+  
+}
+
+/* General form layout */
+.cusAppointment-form {
+  max-width: 1000px;
+  margin: 10px auto;
+  padding: 20px;
+  background: linear-gradient(145deg, #ffd1dc, #ffe6ee);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap; /* Allow elements to wrap */
+  gap: 20px; /* Add space between form fields */
+}
+
+/* Form field containers */
+.cusAppointment-form div {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 300px; /* Allow flexibility and set a min-width */
+}
+
+/* Input fields styling */
+.cusAppointment-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d47188;
+  margin-bottom: 5px;
+}
+
+.cusAppointment-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1rem;
+  border: 2px solid #ffc0cb;
+  border-radius: 5px;
+  background-color: #fffafa;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Select component styling */
+.cusAppointment-react-select-container {
+  width: 100%;
+}
+
+/* Button styling */
+.cusAppointment-button {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #ff7fa2, #ff9cbb);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.cusAppointment-button:hover {
+  background: linear-gradient(90deg, #ff9cbb, #ff7fa2);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 127, 162, 0.5);
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+  .cusAppointment-form {
+    flex-direction: column; /* Stack form elements vertically */
+    max-width: 100%; /* Ensure full width for mobile */
+  }
+
+  /* Adjust widths of fields */
+  .cusAppointment-form div {
+    width: 100%; /* Make each form field full-width */
+  }
+}
+
+/* Media queries for larger screens (laptops and up) */
+@media (min-width: 769px) {
+  .cusAppointment-form {
+    flex-direction: row; /* Keep form elements in horizontal layout */
+    justify-content: space-between; /* Space out form elements */
+  }
+
+  .cusAppointment-form div {
+    flex: 1 1 45%; /* Each form field takes up about 45% of the container */
+  }
+}
