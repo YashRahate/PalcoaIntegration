@@ -20,7 +20,7 @@
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 // import { handleError, handleSuccess } from "../utils";
-// import { useNavigate } from "react-router-dom";
+
 // import Navbar from "../components/Navbar";
 // import Footer from "../components/Footer";
 // import "./MyAppointments.css";
@@ -64,16 +64,16 @@
 //     fetchAppointments();
 //   }, []);
 
-//   const navigate = useNavigate();
-//   const handleLogout = (e) => {
-//     localStorage.removeItem("token");
-//     localStorage.removeItem("loggedInUser");
-//     localStorage.removeItem("loggedInEmail");
-//     handleSuccess("User Logged out");
-//     setTimeout(() => {
-//       navigate("/home");
-//     }, 2000);
-//   };
+  // const navigate = useNavigate();
+  // const handleLogout = (e) => {
+  //   localStorage.removeItem("token");
+  //   localStorage.removeItem("loggedInUser");
+  //   localStorage.removeItem("loggedInEmail");
+  //   handleSuccess("User Logged out");
+  //   setTimeout(() => {
+  //     navigate("/home");
+  //   }, 2000);
+  // };
 
 
 //   const handleToggle = (event, newType) => {
@@ -421,6 +421,7 @@ import {
 import { format } from "date-fns";
 import { ToastContainer } from "react-toastify";
 import { handleError, handleSuccess } from "../utils";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./MyAppointments.css";
@@ -503,10 +504,21 @@ const MyAppointments = () => {
       })
       .catch((error) => handleError("Error cancelling appointment: " + error));
   };
+  const navigate = useNavigate();
+  const handleLogout = (e) => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("loggedInEmail");
+    handleSuccess("User Logged out");
+    setTimeout(() => {
+      navigate("/home");
+    }, 2000);
+  };
+
 
   return (
     <>
-      <Navbar />
+      <Navbar handleLogout={handleLogout} />
       <div className="my-appointments" style={{ padding: "20px", backgroundColor: "#fce4ec", margin: "5px" }}>
         <Typography variant="h4" align="center" gutterBottom style={{ color: "#57111B" }}>
           My Appointments

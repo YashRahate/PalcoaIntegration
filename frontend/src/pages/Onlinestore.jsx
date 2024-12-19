@@ -13,6 +13,7 @@ const Onlinestore = () => {
   const [currentPage, setCurrentPage] = useState(1); // Track current page
   const [productsPerPage] = useState(10); // Number of products per page
   const [totalProducts, setTotalProducts] = useState(0); // Total products
+  const [token, setToken] = useState(null); // Store the token
 
   const navigate = useNavigate();
 
@@ -20,15 +21,27 @@ const Onlinestore = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('loggedInUser');
     localStorage.removeItem('loggedInEmail');
-    // Add a success message or state here if needed
     setTimeout(() => {
       navigate('/home');
     }, 2000);
   };
 
+  const fetchToken = async () => {
+    try {
+      const response = await axios.post('http://mysalon.local/wp-json/jwt-auth/v1/token', {
+        username: 'admin',
+        password: 'admin'
+      });
+      setToken(response.data.token);
+    } catch (error) {
+      console.error('Error fetching token:', error.message);
+      setError('Failed to fetch token. Please check your credentials.');
+    }
+  };
+
   useEffect(() => {
     const fetchProducts = async () => {
-      const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbXlzYWxvbi5sb2NhbCIsImlhdCI6MTczMzIxMjUyMSwibmJmIjoxNzMzMjEyNTIxLCJleHAiOjE3MzM4MTczMjEsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.M2T9ehOvzDOLwPKlgDk4JM21ghA2IAhow2jU3_DXdts"; // Replace with the actual token received
+      if (!token) return; // Wait until token is fetched
 
       try {
         const response = await axios.get('http://mysalon.local/wp-json/wc/v3/products', {
@@ -44,14 +57,19 @@ const Onlinestore = () => {
         setProducts(response.data);
         setTotalProducts(parseInt(response.headers['x-wp-total'])); // Set total products from response headers
       } catch (error) {
-        setError(error.message);
+        console.error('Error fetching products:', error.message);
+        setError('Failed to fetch products.');
       } finally {
         setLoading(false);
       }
     };
 
     fetchProducts();
-  }, [currentPage]); // Fetch products when the current page changes
+  }, [token, currentPage]); // Fetch products when token or current page changes
+
+  useEffect(() => {
+    fetchToken(); // Fetch token on component mount
+  }, []);
 
   const totalPages = Math.ceil(totalProducts / productsPerPage); // Calculate total pages
 
@@ -72,7 +90,7 @@ const Onlinestore = () => {
   }
 
   if (error) {
-    return <div>Error fetching products: {error}</div>;
+    return <div>{error}</div>;
   }
 
   return (

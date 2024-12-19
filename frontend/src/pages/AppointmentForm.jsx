@@ -100,7 +100,7 @@ const AppointmentForm = () => {
     const newErrors = {};
 
     if (!customerData.name || !customerData.contact || !customerData.email) {
-      newErrors.customer = "Customer name, contact, and email are required.";
+      newErrors.customer = "LOGIN require !";
     }
     if (selectedServices.length === 0 && selectedPackages.length === 0) {
       newErrors.services = "Please select at least one service or package.";
