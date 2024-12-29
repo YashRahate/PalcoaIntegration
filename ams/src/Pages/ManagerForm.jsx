@@ -21,7 +21,7 @@ const fetchMobileNumbers = async (inputValue) => {
     if (!inputValue) return [];
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/get-users-staff?staff_mobile_number=${inputValue}`
+        `https://palcoaintegration-backend.onrender.com/api/get-users-staff?staff_mobile_number=${inputValue}`
       );
       const users = response.data;
   
@@ -81,7 +81,7 @@ const handleAddUser = () => {
     e.preventDefault();
     try {
       // Send request to update user to manager and set the password
-      await axios.post("http://localhost:5000/api/update-to-manager", {
+      await axios.post("https://palcoaintegration-backend.onrender.com/api/update-to-manager", {
         staff_mobile_number: formData.staff_mobile_number,
         password: formData.password, // Update password for the user
       });
