@@ -25,7 +25,7 @@ function SignUp() {
         localStorage.setItem("username", userName);
         try {
           const response = await axios.post(
-            "https://localhost:5000/api/signup",
+            "https://palcoaintegration-backend.onrender.com/api/signup",
             userDetails,
             {
               withCredentials: true,
