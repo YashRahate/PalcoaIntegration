@@ -83,7 +83,7 @@ const filterconfirmAppointments = (confirmappointments, filter, timeSlot) => {
       if (confirmDelete) {
         try {
           const response = await axios.delete(
-            `http://localhost:5000/api/delete-appointment-staff/${id}`
+            `https://palcoaintegration-backend.onrender.com/api/delete-appointment-staff/${id}`
           );
           console.log(response.data.message);
           onRefresh(); // Callback to refresh appointments
