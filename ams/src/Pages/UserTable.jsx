@@ -9,7 +9,7 @@ const UserTable = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/get-users");
+        const response = await axios.get("https://palcoaintegration-backend.onrender.com/api/get-users");
         console.log(response.data);
         setUsers(response.data);
       } catch (error) {
