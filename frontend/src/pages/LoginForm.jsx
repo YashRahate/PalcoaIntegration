@@ -106,7 +106,7 @@ function LoginForm() {
           </label>
           <div className="captcha">
             <ReCAPTCHA
-              sitekey="6LePQygqAAAAACnj8jLrvZYyHJrOqejBgaokJpzL"
+              sitekey="6Lc31KgqAAAAAH1UH7hgWu7zlSO8p6zJ-VnCnRDY"
               onChange={handleCaptcha}
             />
           </div>
