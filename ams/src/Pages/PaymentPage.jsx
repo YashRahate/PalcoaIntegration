@@ -12,7 +12,7 @@ const PaymentPage = () => {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/get-all-appointments-staff-confirm");
+        const response = await axios.get("https://palcoaintegration-backend.onrender.com/api/get-all-appointments-staff-confirm");
         console.log(response.data.service_appointments);
         setAppointments(response.data.service_appointments);
       } catch (error) {
@@ -27,7 +27,7 @@ const PaymentPage = () => {
     try {
       console.log(appointment);
       
-      await axios.put(`http://localhost:5000/api/confirm-payment/${appointment._id}`);
+      await axios.put(`https://palcoaintegration-backend.onrender.com/api/confirm-payment/${appointment._id}`);
       // Pass appointment data to PaymentForm
       navigate("/payment-form", { state: { appointment } });
     } catch (error) {
