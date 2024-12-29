@@ -42,7 +42,7 @@ export default function OutletForm() {
   const handleFormData = async(e) => {
     e.preventDefault();
     console.log("Outlet formData",formData);
-    const response = await axios.post('http://localhost:5000/api/outlet', formData,{
+    const response = await axios.post('https://palcoaintegration-backend.onrender.com/api/outlet', formData,{
       headers: {
         'Content-Type': 'application/json',
         // 'Authorization': `Bearer ${JSON.parse(localStorage.getItem('auth_data')).token}`
