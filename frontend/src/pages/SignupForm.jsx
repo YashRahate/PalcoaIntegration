@@ -191,7 +191,7 @@ function SignupForm() {
 
           <div className="captcha">
             <ReCAPTCHA
-              sitekey="6LeBQygqAAAAALAGXxzoXz58fQI3QqtnozpIui66"
+              sitekey="6Lc31KgqAAAAAH1UH7hgWu7zlSO8p6zJ-VnCnRDY"
               onChange={handleCaptcha}
             />
           </div>
