@@ -69,7 +69,7 @@ function SignupForm() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/auth/signup', {
+      const response = await fetch('https://palcoaintegration-backend.onrender.com/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ function SignupForm() {
 
   const handleSubmit = async () => {
     try {
-      await axios.post("http://localhost:5000/api/add-user", formData);
+      await axios.post("https://palcoaintegration-backend.onrender.com/api/add-user", formData);
       // console.log("User added successfully");
     } catch (error) {
       // console.error("Error adding user:", error);
