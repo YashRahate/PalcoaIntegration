@@ -59,7 +59,7 @@ export default function Reports() {
   useEffect(() => {
     // Fetching appointments and setting the data to populate the bar chart
     axios
-      .get("http://localhost:5000/api/get-all-appointments-staff")
+      .get("https://palcoaintegration-backend.onrender.com/api/get-all-appointments-staff")
       .then((response) => {
         const data = response.data.service_appointments;
         console.log("Appointments for report", data);
@@ -96,7 +96,7 @@ export default function Reports() {
     if (appointments.length > 0) {
       // Fetching services after appointments have been set
       axios
-        .get("http://localhost:5000/api/services")
+        .get("https://palcoaintegration-backend.onrender.com/api/services")
         .then((response) => {
           const services = response.data;
           console.log("services", services);
