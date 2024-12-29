@@ -24,7 +24,7 @@ export default function Dashboard() {
     // Fetch today's appointment status breakdown from API
     const fetchAppointmentStatus = async () => {
       try {
-       const response = await axios.get(`http://localhost:5000/api/get-all-appointments-staff-without-filter`, {
+       const response = await axios.get(`https://palcoaintegration-backend.onrender.com/api/get-all-appointments-staff-without-filter`, {
       params: { outlet_id: outletId }  // Pass outlet_id as query param
     });
     // console.log(response)
@@ -70,7 +70,7 @@ export default function Dashboard() {
     // Fetch today's revenue - this would need to be replaced with actual logic
     const fetchTodayRevenue = async () => {
       // Using the `/api/get-all-appointments-staff-without-filter` to get all the appointments
-      const response = await axios.get(`http://localhost:5000/api/get-all-appointments-staff-without-filter`, {
+      const response = await axios.get(`https://palcoaintegration-backend.onrender.com/api/get-all-appointments-staff-without-filter`, {
         params: { outlet_id: outletId }  // Pass outlet_id as query param
       });
 
