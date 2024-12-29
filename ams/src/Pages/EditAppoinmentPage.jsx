@@ -85,7 +85,7 @@ const EditAppointmentPage = () => {
     console.log("formData",formData,"Appointment",appointment);
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/update-appointment-staff/${appointment._id}`,
+        `https://palcoaintegration-backend.onrender.com/api/update-appointment-staff/${appointment._id}`,
         formData,
         {
           headers: {
