@@ -72,8 +72,8 @@ const AppointmentPage = () => {
     //     const userData = JSON.parse(localStorage.getItem("auth_data"));
     // const outletId = userData ? userData.user_data.outlet_id : null;
     //    // Replace with actual outlet ID
-    //     const response = await axios.get(`http://localhost:5000/api/get-all-appointments-staff/${outletId}`, {
-      const response = await axios.get("http://localhost:5000/api/get-all-appointments-staff", {
+    //     const response = await axios.get(`https://palcoaintegration-backend.onrender.com/api/get-all-appointments-staff/${outletId}`, {
+      const response = await axios.get("https://palcoaintegration-backend.onrender.com/api/get-all-appointments-staff", {
           // headers: {
           //   Authorization: `Bearer ${token.token}`,
           // },
@@ -88,7 +88,7 @@ const AppointmentPage = () => {
     const fetchConfirmedAppointments = async () => {
       try {
     
-      const response = await axios.get("http://localhost:5000/api/get-all-appointments-staff-confirm", {
+      const response = await axios.get("https://palcoaintegration-backend.onrender.com/api/get-all-appointments-staff-confirm", {
           // headers: {
           //   Authorization: `Bearer ${token.token}`,
           // },
