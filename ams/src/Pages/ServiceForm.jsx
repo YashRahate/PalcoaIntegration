@@ -22,7 +22,7 @@ const ServiceForm = () => {
     if (id) {
       const fetchService = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/api/services/${id}`);
+          const response = await axios.get(`https://palcoaintegration-backend.onrender.com/api/services/${id}`);
           console.log('Fetched service data:', response.data);  // Debugging
           
           setServiceData({
@@ -51,9 +51,9 @@ const ServiceForm = () => {
     e.preventDefault();
     try {
       if (id) {
-        await axios.put(`http://localhost:5000/api/services/${id}`, serviceData);
+        await axios.put(`https://palcoaintegration-backend.onrender.com/api/services/${id}`, serviceData);
       } else {
-        await axios.post('http://localhost:5000/api/services', serviceData);
+        await axios.post('https://palcoaintegration-backend.onrender.com/api/services', serviceData);
       }
       navigate('/services');
     } catch (error) {
