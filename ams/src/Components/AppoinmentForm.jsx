@@ -29,10 +29,10 @@ const AppointmentForm = ({ appointment, onSave, onCancel }) => {
     const fetchServicesAndPackages = async () => {
       try {
         const servicesResponse = await axios.get(
-          "http://localhost:5000/api/services"
+          "https://palcoaintegration-backend.onrender.com/api/services"
         );
         const packagesResponse = await axios.get(
-          "http://localhost:5000/api/packages"
+          "https://palcoaintegration-backend.onrender.com/api/packages"
         );
 
         // Map services and packages to the react-select format (label, value)
@@ -166,7 +166,7 @@ const AppointmentForm = ({ appointment, onSave, onCancel }) => {
     if (!inputValue) return [];
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/get-users?mobile_phone=${inputValue}`
+        `https://palcoaintegration-backend.onrender.com/api/get-users?mobile_phone=${inputValue}`
       );
       const users = response.data;
 
