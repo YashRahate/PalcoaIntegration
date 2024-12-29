@@ -18,7 +18,7 @@ function OtpverifyPage() {
   const handleSubmitOTP = async () => {
     if (inputOtp == otp) {
       console.log("This is correct OTP");
-      const response = await axios.post("http://localhost:5000/api/verify-otp", { otp: Number(inputOtp) }, {
+      const response = await axios.post("https://palcoaintegration-backend.onrender.com/api/verify-otp", { otp: Number(inputOtp) }, {
         headers: {
           'Content-Type': 'application/json',
         }
