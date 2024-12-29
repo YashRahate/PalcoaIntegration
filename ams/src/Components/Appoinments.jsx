@@ -68,7 +68,7 @@
 //   const handleConfirm = async (id) => {
 //     try {
 //       const response = await axios.put(
-//         `http://localhost:5000/api/confirm-appointment/${id}`
+//         `https://palcoaintegration-backend.onrender.com/api/confirm-appointment/${id}`
 //       );
 //       console.log(response.data.message);
 
@@ -85,7 +85,7 @@
 //     if (confirmDelete) {
 //       try {
 //         const response = await axios.delete(
-//           `http://localhost:5000/api/delete-appointment-staff/${id}`
+//           `https://palcoaintegration-backend.onrender.com/api/delete-appointment-staff/${id}`
 //         );
 //         console.log(response.data.message);
 
@@ -100,7 +100,7 @@
 //   const [outletNames, setOutletNames] = useState([]);
 //   const getOutlets = async () => {
 //     try {
-//       const response = await axios.get("http://localhost:5000/api/outlet", {
+//       const response = await axios.get("https://palcoaintegration-backend.onrender.com/api/outlet", {
 //         headers: {
 //           // Authorization: `Bearer ${
 //           //   JSON.parse(localStorage.getItem("auth_data")).token
@@ -325,7 +325,7 @@ const Appointments = ({ appointments, onRefresh }) => {
   const handleConfirm = async (id) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/confirm-appointment/${id}`
+        `https://palcoaintegration-backend.onrender.com/api/confirm-appointment/${id}`
       );
       console.log(response.data.message);
       onRefresh(); // Callback to refresh appointments
@@ -341,7 +341,7 @@ const Appointments = ({ appointments, onRefresh }) => {
     if (confirmDelete) {
       try {
         const response = await axios.delete(
-          `http://localhost:5000/api/delete-appointment-staff/${id}`
+          `https://palcoaintegration-backend.onrender.com/api/delete-appointment-staff/${id}`
         );
         console.log(response.data.message);
         onRefresh(); // Callback to refresh appointments
