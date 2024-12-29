@@ -35,7 +35,7 @@ const ServiceMaster = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/services');
+        const response = await axios.get('https://palcoaintegration-backend.onrender.com/api/services');
         console.log(response.data)
         setServices(response.data);
       } catch (error) {
@@ -49,7 +49,7 @@ const ServiceMaster = () => {
     // Delete service
     const handleDelete = async (id) => {
       try {
-        await axios.delete(`http://localhost:5000/api/services/${id}`);
+        await axios.delete(`https://palcoaintegration-backend.onrender.com/api/services/${id}`);
         setServices(services.filter(service => service._id !== id));
       } catch (error) {
         console.error('Error deleting service:', error);
