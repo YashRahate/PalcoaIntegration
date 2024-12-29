@@ -18,7 +18,7 @@ function Login() {
       console.log("Starting login process...");
       console.log(credentials)
       const response = await axios.post(
-        "http://localhost:5000/api/get-otp",
+        "https://palcoaintegration-backend.onrender.com/api/get-otp",
         credentials,);
 
       console.log("Received response:", response);
