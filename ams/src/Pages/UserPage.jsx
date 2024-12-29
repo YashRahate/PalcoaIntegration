@@ -21,7 +21,7 @@ const UserPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/add-user", formData);
+      await axios.post("https://palcoaintegration-backend.onrender.com/api/add-user", formData);
       console.log("User added successfully");
       navigate("/users");
     } catch (error) {
