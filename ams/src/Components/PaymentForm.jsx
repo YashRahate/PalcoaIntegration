@@ -582,7 +582,7 @@ export default function PaymentForm() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/payment",
+        "https://palcoaintegration-backend.onrender.com/api/payment",
         formData
       );
 
