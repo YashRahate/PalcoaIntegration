@@ -113,7 +113,7 @@ const PackageMaster = () => {
   useEffect(() => {
     const fetchPackages = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/packages');
+        const response = await axios.get('https://palcoaintegration-backend.onrender.com/api/packages');
         console.log(response.data)
         setPackages(response.data);  // Set the fetched packages
       } catch (error) {
@@ -142,7 +142,7 @@ const PackageMaster = () => {
   // Delete a package by ID
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/packages/${id}`);
+      await axios.delete(`https://palcoaintegration-backend.onrender.com/api/packages/${id}`);
       setPackages(packages.filter((pkg) => pkg._id !== id));  // Update state after deletion
     } catch (error) {
       console.error('Error deleting package:', error);
