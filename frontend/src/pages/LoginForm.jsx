@@ -43,7 +43,7 @@ function LoginForm() {
       return handleError('Please complete the CAPTCHA')
     }
     try {
-        const url = `http://localhost:5000/auth/login`;
+        const url = `https://palcoaintegration-backend.onrender.com/auth/login`;
         const response = await fetch(url, {
             method: "POST",
             headers: {
