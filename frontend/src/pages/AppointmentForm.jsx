@@ -45,9 +45,9 @@ const AppointmentForm = () => {
   useEffect(() => {
     const fetchServicesAndPackages = async () => {
       try {
-        const servicesResponse = await axios.get("http://localhost:5000/api/services");
-        const packagesResponse = await axios.get("http://localhost:5000/api/packages");
-        const outletsResponse = await axios.get("http://localhost:5000/customer/outlets");
+        const servicesResponse = await axios.get("https://palcoaintegration-backend.onrender.com/api/services");
+        const packagesResponse = await axios.get("https://palcoaintegration-backend.onrender.com/api/packages");
+        const outletsResponse = await axios.get("https://palcoaintegration-backend.onrender.com/customer/outlets");
 
         const servicesOptions = servicesResponse.data.map((service) => ({
           label: `${service.service_name} - $${service.price}`,
@@ -74,7 +74,7 @@ const AppointmentForm = () => {
     const loggedInEmail = localStorage.getItem("loggedInEmail");
     if (loggedInEmail) {
       axios
-        .get("http://localhost:5000/customer/get-customer", { params: { email: loggedInEmail } })
+        .get("https://palcoaintegration-backend.onrender.com/customer/get-customer", { params: { email: loggedInEmail } })
         .then((response) => setCustomerData(response.data))
         .catch(() => toast.error("Error fetching customer data"));
     }
@@ -140,7 +140,7 @@ const AppointmentForm = () => {
     };
 
     try {
-      await axios.post("http://localhost:5000/api/add-appointment-staff", appointmentData);
+      await axios.post("https://palcoaintegration-backend.onrender.com/api/add-appointment-staff", appointmentData);
       toast.success("Appointment booked successfully!");
 
       // Clear all fields after successful booking
