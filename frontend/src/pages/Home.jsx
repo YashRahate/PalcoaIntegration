@@ -142,7 +142,7 @@ const Testimonials = () => {
       image: img,
     },
     {
-      name: "Artha",
+      name: "Shilpa",
       text: "I had a facial treatment with Riya, and it was beyond amazing. She took the time to explain every step and tailored the treatment to my skin's needs. I left feeling rejuvenated and with glowing skin. ",
       image: img,
     },
